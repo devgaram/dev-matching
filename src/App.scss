@@ -1,0 +1,118 @@
+.app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  .search {
+    &__text-field {
+
+    }
+    &__action {
+      
+    }
+    
+  }
+
+  .list {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 1fr;
+    margin-top: 50px;
+
+    @media (min-width: 576px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(3, 1fr);
+
+    }
+
+    @media (min-width: 992px) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    @media (min-width: 1200px) {
+      grid-template-columns: repeat(5, 1fr);
+    }
+
+    .card {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      height: 250px;
+      cursor: pointer;
+
+      &__image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      @media (min-width: 576px) {
+        width: 250px;
+      }
+    }
+  }
+
+  .loader {
+    border: 25px solid #f3f3f3;
+    border-top: 26px solid #3498db;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 2s linear infinite;
+    position: absolute;
+    top: 100px;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  .modal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    &-overlay {
+      position: absolute;
+      background: rgba($color: (#000000), $alpha: 0.7);
+      width: 100%;
+      height: 100%;
+    }
+
+    &-body {
+      display: flex;
+      flex-direction: column;
+      width: 300px;
+      height: 300px;
+      background: #fff;
+      z-index: 1;
+
+      @media (min-width: 576px) {
+        width: 500px;
+        height: 500px;
+      }
+  
+      @media (min-width: 768px) {
+        width: 600px;
+        height: 500px;
+      }
+
+      &__header {
+        display: flex;
+        justify-content: flex-end;
+        padding: 10px;
+
+      }
+    }
+  }
+}

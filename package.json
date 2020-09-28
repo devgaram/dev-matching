@@ -1,0 +1,15 @@
+{
+  "name": "dev-matching",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "parcel serve index.html"
+  },
+  "devDependencies": {
+    "eslint": "^7.10.0",
+    "parcel": "^2.0.0-beta.1",
+    "sass": "^1.26.11",
+    "typescript": "^4.0.3"
+  }
+}
