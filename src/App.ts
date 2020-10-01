@@ -27,7 +27,7 @@ export default class App  {
     } });
 
     const list = new List({ $target, data: this.cats, onOpenModal: (cat: Cat) => {
-      console.log(cat);
+      modal.setState(cat);
       modal.open();
     } });
 

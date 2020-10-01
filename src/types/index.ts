@@ -8,8 +8,20 @@ export interface ErrorResponse {
 // url: "https://cdn2.thecatapi.com/images/2bc.jpg"
 // width: 500
 
+export type Weight = {
+  imperial: string;
+  metric: string;
+}
+
+export type Breed = {
+  name: string;
+  temperament: string;
+  origin: string;
+  weight: Weight;
+}
+
 export type Cat = {
-  breeds: Array<any>;
+  breeds: Array<Partial<Breed>>;
   height: number;
   id: string;
   url: string;
