@@ -17,4 +17,9 @@ export default class SearchInput {
   getState(): string {
     return this.$element.value;
   }
+
+  setState(data) {
+    this.data = data;
+    this.$element.value = data;
+  }
 }
