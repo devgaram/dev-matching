@@ -11,7 +11,9 @@ export default class SearchButton {
     const $element = document.createElement('button');
     $element.className = 'search__action';
     $element.innerText = buttonText;
-    $element.addEventListener('click', clickEventListener);
+    $element.addEventListener('click', (e) => {
+      clickEventListener(e);
+    });
 
     this.$element = $element;
     $target.appendChild(this.$element);

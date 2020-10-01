@@ -8,12 +8,13 @@ interface Params {
 }
 export default class Search {
   $element: HTMLElement;
+  $elInput: SearchInput;
 
-  constructor({ $target, onRandomSearch, onSearch }: Params) {
+  constructor({ $target, onSearch, onRandomSearch,  }: Params) {
     const $element = document.createElement('section');
     $element.className = 'search';
 
-    new SearchInput($element);
+    this.$elInput = new SearchInput($element);
     new SearchAction({ $target: $element, buttonText: '검색', clickEventListener: onSearch });
     new SearchAction({ $target: $element, buttonText: '랜덤검색', clickEventListener: onRandomSearch });
    

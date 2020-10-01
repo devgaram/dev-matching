@@ -22,8 +22,12 @@ export default class App  {
       this.cats = randowData;
       list.setState(randowData);
       loader.hide();
-    }, onSearch: () => {
-      console.log('검색')
+    }, onSearch: async () => {
+      loader.show();
+      const cats = await api.getCatByName(search.$elInput.getState());
+      this.cats = cats;
+      list.setState(cats);
+      loader.hide();
     } });
 
     const list = new List({ $target, data: this.cats, onOpenModal: (cat: Cat) => {

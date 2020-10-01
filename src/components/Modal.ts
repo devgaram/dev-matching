@@ -32,6 +32,10 @@ export default class Modal {
     this.$elWeight = this.$element.querySelector('.cat-weight');
     
     this.$element.querySelector('.close').addEventListener('click', () => this.close());
+    this.$element.querySelector('.modal-overlay').addEventListener('click', () => this.close());
+    window.addEventListener('keydown', (e) => {
+      if (e.code === 'Escape') this.close();
+    });
     this.close();
     $target.appendChild(this.$element);
 

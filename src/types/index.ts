@@ -14,6 +14,7 @@ export type Weight = {
 }
 
 export type Breed = {
+  id: string;
   name: string;
   temperament: string;
   origin: string;

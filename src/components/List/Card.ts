@@ -31,7 +31,6 @@ export default class Card {
 
    
     if (breeds[0]) {
-      console.log(breeds[0])
       const $cartName = document.createElement('p');
       $cartName.className = 'card__name';
       $cartName.innerText = breeds[0].name;

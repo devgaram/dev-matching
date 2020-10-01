@@ -29,6 +29,11 @@ export default class List {
   render() {
     this.$element.innerHTML = '';
 
+    if (!this.data.length) {
+      this.$element.innerHTML = '데이터 없음';
+      return;
+    }
+    
     this.data.forEach(cat => {
       new Card({ $target: this.$element, data: cat });
     })
