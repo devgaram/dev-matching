@@ -5,9 +5,9 @@ export default class RecentKeyword {
   data: Array<string>;
   callback: (key) => {};
 
-  constructor({ $target, callback } ) {
-    const $element = document.createElement('div');
-    $element.className = 'recent-keyword'
+  constructor({ $target, callback }) {
+    const $element = document.createElement("div");
+    $element.className = "recent-keyword";
     this.data = [];
 
     this.$element = $element;
@@ -21,12 +21,16 @@ export default class RecentKeyword {
   }
 
   render() {
-    this.$element.innerHTML = '';
-    
-    this.data.map(key => {
-      new SearchButton({ $target: this.$element, buttonText: key, clickEventListener: () => {
-        this.callback(key);
-      }});
+    this.$element.innerHTML = "";
+
+    this.data.map((key) => {
+      new SearchButton({
+        $target: this.$element,
+        buttonText: key,
+        clickEventListener: () => {
+          this.callback(key);
+        },
+      });
     });
   }
 }

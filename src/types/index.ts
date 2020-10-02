@@ -1,5 +1,5 @@
 export interface ErrorResponse {
-  message: string,
+  message: string;
 }
 
 // breeds: []
@@ -11,7 +11,7 @@ export interface ErrorResponse {
 export type Weight = {
   imperial: string;
   metric: string;
-}
+};
 
 export type Breed = {
   id: string;
@@ -19,7 +19,7 @@ export type Breed = {
   temperament: string;
   origin: string;
   weight: Weight;
-}
+};
 
 export type Cat = {
   breeds: Array<Partial<Breed>>;
@@ -27,4 +27,4 @@ export type Cat = {
   id: string;
   url: string;
   width: number;
-}
+};
